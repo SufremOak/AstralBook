@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AstralBook | Astronomical Mathematical Notebook</title>
+        <style>
+            :root {
+                --primary: #6c5ce7;
+                --secondary: #a29bfe;
+                --accent: #ff7675;
+                --text: #ffffff;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                background: var(--primary);
+                color: var(--text);
+                background: linear-gradient(
+                    45deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+            }
+
+            .header {
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--accent);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav a {
+                color: var(--text);
+                text-decoration: none;
+                margin-left: 2rem;
+                transition: 0.3s;
+                font-weight: 500;
+                position: relative;
+            }
+
+            .nav a::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: var(--accent);
+                transition: 0.3s;
+            }
+
+            .nav a:hover::after {
+                width: 100%;
+            }
+
+            .hero {
+                min-height: 80vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 5rem;
+                margin-bottom: 1rem;
+                background: linear-gradient(
+                    45deg,
+                    var(--accent),
+                    var(--secondary)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            .hero-content p {
+                font-size: 1.4rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            .cta-button {
+                background: var(--accent);
+                color: white;
+                padding: 1.2rem 2.5rem;
+                border-radius: 50px;
+                text-decoration: none;
+                transition: 0.3s;
+                font-weight: 600;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .features {
+                padding: 4rem 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .feature-card {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 2.5rem;
+                border-radius: 20px;
+                text-align: center;
+                backdrop-filter: blur(10px);
+                transition: 0.3s;
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-card i {
+                font-size: 3rem;
+                color: var(--accent);
+                margin-bottom: 1.5rem;
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">✨ AstralBook</div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#docs">Documentation</a>
+                <a href="#github">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AstralBook</h1>
+                <p>
+                    Your magical companion for exploring the cosmos through
+                    code! ⭐️
+                </p>
+                <a href="#get-started" class="cta-button"
+                    >Begin Your Journey 🚀</a
+                >
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card">
+                <i class="fas fa-code"></i>
+                <h3>Multiple Languages</h3>
+                <p>
+                    JavaScript and Python for make programs in your notebooks 💻
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-table"></i>
+                <h3>Magical Spreadsheets</h3>
+                <p>Coming soon in v0.2! 📊</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-star"></i>
+                <h3>Celestial Magic</h3>
+                <p>
+                    Turn complex astronomical calculations into pure starlight
+                    ✨
+                </p>
+            </div>
+        </section>
+
+        <script src="https://kit.fontawesome.com/your-code.js"></script>
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document
+                        .querySelector(this.getAttribute("href"))
+                        .scrollIntoView({
+                            behavior: "smooth",
+                        });
+                });
+            });
+
+            // Add animation on scroll
+            window.addEventListener("scroll", () => {
+                document.querySelectorAll(".feature-card").forEach((card) => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        card.style.opacity = "1";
+                        card.style.transform = "translateY(0)";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+[project]
+name = "astralbook"
+version = "0.1.0"
+description = "Astronomic Mathematical interactive notebook system"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mathplot>=0.1",
+    "numpy",
+    "rich",
+    "textual>=3.1.1",
+    "typer",
+]
