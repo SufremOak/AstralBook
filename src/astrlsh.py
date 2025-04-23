@@ -1,8 +1,7 @@
 from rich.console import Console
 from rich.markdown import Markdown
 import numpy as np
-from math.algebra import AlgebraInterpreter
-from math.algebra import BasicOperations
+# from algebra import evaluate
 
 class AstralShell:
     def __init__(self):
